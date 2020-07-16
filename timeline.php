@@ -4,8 +4,8 @@
 $my_user_id = $_POST["my_user_id"];
 // $my_user_id = '101';
 
-var_dump($my_user_id);
-exit();
+// var_dump($my_user_id);
+// exit();
 // okioka end
 
 session_start(); // セッションの開始
@@ -173,6 +173,33 @@ foreach ($result as $record) {
         max-width: 100%;
         vertical-align: middle;
     }
+
+
+    /* ここから下がボタンのCSS　*/
+    .btn {
+        text-align: center;
+        font-size: 15px;
+        display: inline-block;
+        padding: 0.5em 2em;
+        line-height: 1;
+        border-radius: 0.3em;
+        color: #fff;
+        text-decoration: none;
+
+        box-shadow: 2px 2px 10px -5px #064405;
+        border: solid 1px #199217;
+        background: linear-gradient(#6bd867, #24a724);
+        transition: 0.3s;
+
+        margin-top: 15px;
+    }
+
+
+
+    .btn:hover {
+        box-shadow: none;
+        background: linear-gradient(#49bd45, #1f8e1c);
+    }
 </style>
 
 
@@ -222,7 +249,7 @@ foreach ($result as $record) {
                 </div>
                 <div>
                     <input type="file" name="fle_photo">
-                    <input type='hidden' name='txt_user_id' value='<?= $my_user_id ?>'>
+                    <input type='hidden' name='txt_user_id' value='<?= $my_user_id ?>'><br>
                     <button class="btn">投稿</button>
                 </div>
         </form>

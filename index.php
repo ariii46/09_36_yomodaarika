@@ -87,6 +87,13 @@ unset($record);
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX96tW9Wr5hrh3pZLMBbdoxvWy8G4DIto&callback=initMap&libraries=places" async defer></script>
 
+  <!-- okioka add start -->
+  <script src="js/login_status_a.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/3.5.2/firebase-ui-auth__ja.js"></script>
+  <script src="js/config.js"></script>
+
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -114,7 +121,6 @@ unset($record);
     #target {
       width: 0 auto;
       height: 500px;
-
     }
   </style>
 
@@ -149,18 +155,38 @@ unset($record);
           <a href="timeline.php" class="navbar-brand d-flex align-items-center">タイムライン</a>
           <a href="#" class="navbar-brand d-flex align-items-center">イベント</a> -->
 
-          <input type="button" value="マップ" onClick="login_status()" />
+          <input class="menu_btn" type="button" value="マップ" onClick="login_status()" />
           <form action="timeline.php" method="POST">
             <fieldset>
               <div>
                 <input type="hidden" id="user_id" name="my_user_id">
-                <button id="get_user_id">タイムライン</button>
+                <button class="menu_btn" id="get_user_id">タイムライン</button>
               </div>
             </fieldset>
           </form>
-          <input type="button" value="イベント" onClick="login_status()" />
+          <input class="menu_btn" type="button" value="イベント" onClick="login_status()" />
 
           <!-- <input type="button" value="テスト" onClick="login_status()" /> -->
+
+          <style>
+            /* ここから下がボタンのCSS　*/
+            .menu_btn {
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
+              outline: none;
+              padding: 0;
+              appearance: none;
+              color: antiquewhite;
+              font-size: 20px;
+              font-weight: bolder;
+            }
+
+            .menu_btn:hover {
+              opacity: 0.8;
+            }
+          </style>
+
 
           <script>
             $(function() {
